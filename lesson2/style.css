@@ -10,3 +10,7 @@ footer {
 p {
     color: blueviolet;
 }
+
+div {
+    display: flex;
+}
