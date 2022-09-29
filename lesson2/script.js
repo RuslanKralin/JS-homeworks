@@ -78,7 +78,11 @@ let seconds = days*86400;
 console.log(seconds +' секунд');
 
 
-//задание 10
-
-
-
+/*задание 10
+let dayNumber = '32';
+ if (dayNumber >0 || dayNumber <= 31) console.log ('январь')
+ if (dayNumber >31 || dayNumber <= 59) console.log ('февраль')
+ if (dayNumber >59 || dayNumber <= 90) console.log ('март')
+ if (dayNumber >90 || dayNumber <= 120) console.log ('апрель')
+ if (dayNumber >120 || dayNumber <= 151) console.log ('май')
+ */
