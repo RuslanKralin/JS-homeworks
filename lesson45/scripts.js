@@ -65,7 +65,7 @@ document.write(arr8.reverse());
 document.write('<br />');
 
 // задание 9
-let arr9 = [5, 9, 21, , , 9, 78, , , , 6];
+let arr9 = [5, 9, 21, , 9, 78, , , , 6];
 let sum1 = 0;
 for(let i=0; i<=arr9.length; i++){
    if(typeof arr9[i] == 'undefined'){ sum1 ++;}
