@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
 
        const task_content_el = document.createElement('div');//сдоздаём элем.содержимого задачи
        task_content_el.classList.add('content');
-       task_content_el.innerText = task;//введённое в инпут сверху отображается в новом диве
+       //task_content_el.innerText = task;//введённое в инпут сверху отображается в новом диве//Рома
 
        task_el.appendChild(task_content_el);//добавляем содержимое элемента в элем.задачи
 
@@ -28,6 +28,7 @@ window.addEventListener('load', () => {
        const task_input_el = document.createElement('input');//создаём инпут в кот.можно чтото менять по задаче содержимому
        task_input_el.type = 'text';
        task_input_el.classList.add('text');
+       task_input_el.value = task;//Рома
        
        
        task_input_el.setAttribute("readonly", "readonly" );//атрибут только для чтения
