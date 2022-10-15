@@ -1,0 +1,109 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, #dcb474, #2ec4cf);
+}
+.generalTitle {
+  text-align: center;
+  color: aliceblue;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.inputField {
+  padding: 50px;
+  background-color: rgb(222, 220, 212);
+  max-width: 600px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.inputField-btn {
+  max-width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: cornflowerblue;
+}
+
+.inputGeneral {
+  margin-bottom: 5px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.calculations {
+  background-color: rgb(222, 220, 212);
+  max-width: 600px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  color: darkslategrey;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.subtitle {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+p {
+  margin-bottom: 3px;
+}
+
+.input {
+  min-width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+:placeholder-shown {
+  padding-left: 10px;
+}
+
+.add {
+  max-width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: cornflowerblue;
+  margin-bottom: 10px;
+}
+
+.extraMassege {
+    color: red;
+    display: none;
+}
+
+.budget {
+    background-color: rgb(108, 202, 233);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 7px;
+}
+
+.left {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: aquamarine;
+    margin-bottom: 7px;
+}

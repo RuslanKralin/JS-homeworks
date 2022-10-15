@@ -148,3 +148,13 @@ main {
 .task .actions .delete {
     color: crimson;
 }
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.sum {
+  display: flex;
+}
