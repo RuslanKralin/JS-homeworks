@@ -55,6 +55,7 @@ body {
   color: darkslategrey;
   padding-left: 10px;
   padding-right: 10px;
+  padding-bottom: 10px;
 }
 
 .subtitle {
@@ -106,4 +107,10 @@ p {
     border-radius: 5px;
     background-color: aquamarine;
     margin-bottom: 7px;
+}
+
+li {
+  border-bottom: grey 1px solid;
+  font-style: italic;
+  list-style-type: none;
 }
