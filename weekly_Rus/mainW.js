@@ -9,12 +9,12 @@ const inputName = document.querySelector(".inputName");
 const inputPrice = document.querySelector(".inputPrice");
 const ul = document.querySelector(".nameProductList");
 
-let productListData = []; //для локал стор
+let productListData = []; //для локал стор продукты и цены
+let budgetDataValue; //переменная для хранения значения бюджета для локал стор
 
-
-if (window.location.pathname == "/weekly_Rus/") {
+if (window.location.pathname == "/indexW.html/") {
   if (localStorage.getItem("productListData") !== null) {
-    let localProductData = localStorage.getItem("productListData") || [];
+    let localProductData = localStorage.getItem("productListData");
     if (localProductData.length > 0)
       productListData = JSON.parse(localProductData);
 
@@ -31,6 +31,13 @@ if (window.location.pathname == "/weekly_Rus/") {
 
     // productUpdate();
   }
+  let budgetDataValue = +formInputField.children[0].value;
+  localStorage.setItem("budgetData", JSON.stringify(budgetDataValue));
+  let budgetData = localStorage.getItem("budgetData");
+  if (budgetData) {
+    budgetData = JSON.parse(budgetDataValue);
+    budget.appendChild(budgetData); //как добавить значение баджеда из локал стор в значение баджета после обновления страницы
+  }
 }
 
 formInputField.children[1].addEventListener("click", (e) => {
@@ -40,10 +47,8 @@ formInputField.children[1].addEventListener("click", (e) => {
     balance.append(+formInputField.children[0].value);
     formInputField.style.display = "none";
 
-    // let Bud = budget.textContent;
-    // localStorage.setItem('budgetData', JSON.stringify(Bud));
-    // let budgetData = localStorage.getItem("Bud")
-    // Bud = JSON.parse(budgetData)
+    let budgetDataValue = +formInputField.children[0].value;
+    localStorage.setItem("budgetData", JSON.stringify(budgetDataValue));
   }
 });
 
@@ -84,7 +89,6 @@ addProduct.addEventListener("click", (e) => {
 });
 
 let localProductData = localStorage.getItem("productListData") || [];
-
 if (localProductData.length > 0) productListData = JSON.parse(localProductData);
 
 ul.innerHTML = "";
