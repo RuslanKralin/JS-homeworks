@@ -11,40 +11,40 @@ const ul = document.querySelector(".nameProductList");
 
 let productListData = []; //для локал стор продукты и цены
 let budgetDataValue; //переменная для хранения значения бюджета для локал стор
+let leftDataValue;
 
-if (window.location.pathname == "/indexW.html/") {
+document.addEventListener("DOMContentLoaded", function () {
   if (localStorage.getItem("productListData") !== null) {
     let localProductData = localStorage.getItem("productListData");
     if (localProductData.length > 0)
       productListData = JSON.parse(localProductData);
 
-    ul.innerHTML = "";
-
     productListData.forEach(function (newProduct) {
-      let productElement = document.createElement("li");
-      productElement.innerHTML = `<li class="nameProduct">
-      ${newProduct.name}:
-       ${newProduct.price} $</li>
-      `;
-      ul.appendChild(productElement);
+      makeLi(newProduct.name, newProduct.price);
     });
 
     // productUpdate();
   }
-  let budgetDataValue = +formInputField.children[0].value;
-  localStorage.setItem("budgetData", JSON.stringify(budgetDataValue));
-  let budgetData = localStorage.getItem("budgetData");
-  if (budgetData) {
-    budgetData = JSON.parse(budgetDataValue);
-    budget.appendChild(budgetData); //как добавить значение баджеда из локал стор в значение баджета после обновления страницы
+
+  const budgetFromLocalStorage = localStorage.getItem("budgetData");
+  if (Number(budgetFromLocalStorage)) {
+    budgetDataValue = Number(budgetFromLocalStorage);
+    budget.innerHTML = budgetDataValue;
   }
-}
+  //добавить тоже с остатком баланса
+  const balanceFromLocalStorage = localStorage.getItem("balanceData");
+  if (Number(balanceFromLocalStorage)) {
+    leftDataValue = Number(balanceFromLocalStorage);
+    balance.innerHTML = leftDataValue;
+  }
+});
 
 formInputField.children[1].addEventListener("click", (e) => {
   e.preventDefault(e);
   if (/^\d{1,10}$/g.test(formInputField.children[0].value)) {
     budget.append(+formInputField.children[0].value);
     balance.append(+formInputField.children[0].value);
+
     formInputField.style.display = "none";
 
     let budgetDataValue = +formInputField.children[0].value;
@@ -93,15 +93,6 @@ if (localProductData.length > 0) productListData = JSON.parse(localProductData);
 
 ul.innerHTML = "";
 
-productListData.forEach(function (newProduct) {
-  let productElement = document.createElement("li");
-  productElement.innerHTML = `<li class="nameProduct">
-    ${newProduct.name}:
-     ${newProduct.price} $</li>
-    `;
-  ul.appendChild(productElement);
-});
-
 function makeLi(inputName, inputPrice) {
   let li = document.createElement("li");
   li.innerHTML = `${inputName}:  ${inputPrice}$;`;
@@ -109,6 +100,9 @@ function makeLi(inputName, inputPrice) {
 }
 function newBalance(inputPrice) {
   balance.innerHTML = (balance.textContent - inputPrice).toFixed(2);
+
+  let leftDataValue = Number(balance.innerHTML);
+  localStorage.setItem("balanceData", JSON.stringify(leftDataValue));
 }
 
 const massege = document.querySelector(".extraMassege");
@@ -121,3 +115,12 @@ function lowBalance(balance) {
     left.style.background = color = "red";
   }
 }
+
+// productListData.forEach(function (newProduct) {
+//   let productElement = document.createElement("li");
+//   productElement.innerHTML = `<li class="nameProduct">
+//     ${newProduct.name}:
+//      ${newProduct.price} $</li>
+//     `;
+//   ul.appendChild(productElement);
+// });
