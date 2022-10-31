@@ -1,0 +1,48 @@
+body {
+  height: 100vh;
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#334749),
+    to(#267f63)
+  );
+  background: linear-gradient(to left, #ba1b7b, #267f63);
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  color: bisque;
+  padding-top: 20px;
+}
+
+body .quetion {
+    font-size: 2rem;
+    border: 1px solid;
+    width: 50%;
+    margin: 30px auto;
+    padding: 15px 0;
+    border-radius: 20px;
+    background-color: rgb(154, 225, 203);
+    
+}
+.answer {
+    font-size: 2rem;
+    border: 1px solid;
+    width: 50%;
+    margin: 30px auto;
+    padding: 15px 0;
+    border-radius: 5px;
+    background-color: rgb(225, 236, 233);
+}
+
+.counter {
+    font-size: 3rem;
+    color: rgb(222, 21, 21);
+    font-weight: 900;
+}

@@ -45,7 +45,7 @@ function createUser(response) {
 }
 
 function clear() {
-  userInfoWrapper.style.display = "none";
+  userPreview.style.display = "none";
 }
 
 

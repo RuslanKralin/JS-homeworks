@@ -29,13 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const budgetFromLocalStorage = localStorage.getItem("budgetData");
   if (Number(budgetFromLocalStorage)) {
     budgetDataValue = Number(budgetFromLocalStorage);
-    budget.innerHTML = budgetDataValue;
+    budget.innerHTML = budgetDataValue
+    console.log(budgetDataValue)
   }
-  //добавить тоже с остатком баланса
+  //добавить тоже с остатком баланса (left)
   const balanceFromLocalStorage = localStorage.getItem("balanceData");
   if (Number(balanceFromLocalStorage)) {
     leftDataValue = Number(balanceFromLocalStorage);
-    balance.innerHTML = leftDataValue;
+    balance.innerHTML = leftDataValue 
   }
 });
 
