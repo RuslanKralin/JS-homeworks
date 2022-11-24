@@ -17,29 +17,22 @@
     color: rgb(119, 116, 111);
 }
 
-
 .movieInput {
     width: 30%;
     height: 40px;
     margin-left: 200px;
     border-radius: 7px;
-    
-
-}
+ }
 .pageControl {
-    
     display: flex;
     justify-content: space-around;
-    
-    
 }
 .footer {
-
     left: 0;
     bottom: 0;
     width: 100%;
     height: 50px;
-    display: none;
+    
   }
 
  .pageNumber {
@@ -55,17 +48,23 @@
  .new {transform: rotate(0.5turn);}
 
 .movieList {
-    justify-content: space-around;
+flex-wrap: wrap;
     
 }
-.movie {
+.movieImg {
     min-width: 250px;
     min-height: 400px;
     margin: 20px;
-    flex-direction: column;
+    border-radius: 5px;
 
 }
+.movie {
+    border-radius: 5px;
+    gap: 20px;
+}
 
-
+.movieTitle {
+    background-color: darkgrey;
+}
 
 /*теперь делаем поле превью для фильма

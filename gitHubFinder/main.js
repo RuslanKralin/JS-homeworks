@@ -1,15 +1,16 @@
 const userName = document.querySelector("#userName");
 const userPreview = document.querySelector("#userPreview");
 
+
 userName.addEventListener("keyup", function () {
   if (userName.value != "") {
     fetch(`https://api.github.com/users/${userName.value}`)
-      .then((res) => {
-        console.log(res);
-        return res.json();
+      .then((response) => {
+        console.log(response);
+        return response.json();
       })
-      .then((res) => {
-        createUser(res);
+      .then((response) => { //здесь работаем с ответом
+        createUser(response);
       });
   } else clear();
 });
@@ -26,6 +27,8 @@ function createUser(response) {
     <div class="info__text">Location: <span>Null</span></div>
     <div class="info__text">Company: <span>Null</span></div>
     <div class="info__text">ID: <span>Null</span></div>
+    <div class="info__text">followers: <span>Null</span></div>
+    <div class="info__text">email:<span>Null</span></div>
 </div>
       `;
   } else {
@@ -39,6 +42,8 @@ function createUser(response) {
               <div class="info__text">Location: <span>${response.location}</span></div>
               <div class="info__text">Company: <span>${response.company}</span></div> 
               <div class="info__text">ID: <span>${response.id}</span></div> 
+              <div class="info__text">followers: <span>${response.followers}</span></div>
+              <div class="info__text">email:<span>${response.email}</span></div>
           </div>
       `;
   }
@@ -47,5 +52,3 @@ function createUser(response) {
 function clear() {
   userPreview.style.display = "none";
 }
-
-

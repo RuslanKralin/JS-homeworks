@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+body {
+    background-color: rgb(241, 236, 229);
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+   
+}
+
+.card {
+    max-width: 600px;
+    padding: 16px;
+    background-color: aliceblue;
+    box-shadow: 5px 5px 15px grey;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 40px;
+    border-radius: 5px;
+    background-color: rgb(180, 231, 92);
+    cursor: grab;
+}
